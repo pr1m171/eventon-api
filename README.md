@@ -160,6 +160,7 @@ El sistema Eventon proporciona las siguientes APIs para gestionar eventos, categ
         "precio": 100.00,
         "estado": "publicado",
         "url": "https://ejemplo.com/evento",
+        "tipo_destacado": "oro",
         "lugar": {
           "id": 1,
           "nombre": "Nombre del lugar",
@@ -200,22 +201,23 @@ El sistema Eventon proporciona las siguientes APIs para gestionar eventos, categ
 #### Filtrar eventos
 - **Endpoint**: `/api/eventos/filtrar`
 - **Método**: GET
-- **Descripción**: Obtiene una lista filtrada de eventos según múltiples criterios, con información detallada de lugar, organizador y etiquetas.
+- **Descripción**: Filtra eventos según varios criterios.
 - **Parámetros de consulta**:
-  - `titulo`: Filtra por título del evento (búsqueda parcial)
-  - `subtitulo`: Filtra por subtítulo del evento (búsqueda parcial)
-  - `descripcion`: Filtra por descripción o descripción larga (búsqueda parcial)
-  - `estado`: Filtra por estado del evento ('borrador', 'publicado', 'cancelado', 'finalizado')
+  - `titulo`: Filtra por título (búsqueda parcial)
+  - `subtitulo`: Filtra por subtítulo (búsqueda parcial)
+  - `descripcion`: Filtra por descripción (búsqueda parcial)
+  - `estado`: Filtra por estado (`borrador`, `publicado`, `cancelado`, `finalizado`)
   - `organizador_id`: Filtra por ID del organizador
   - `lugar_id`: Filtra por ID del lugar
-  - `categoria`: Filtra por ID de categoría
-  - `etiqueta_id`: Filtra por ID de etiqueta
+  - `categoria`: Filtra por ID de la categoría
+  - `etiqueta_id`: Filtra por ID de la etiqueta
   - `precio_min`: Filtra por precio mínimo
   - `precio_max`: Filtra por precio máximo
-  - `fecha_inicio_desde`: Filtra eventos que comienzan a partir de esta fecha (formato ISO)
-  - `fecha_inicio_hasta`: Filtra eventos que comienzan antes de esta fecha (formato ISO)
-  - `fecha_fin_desde`: Filtra eventos que terminan a partir de esta fecha (formato ISO)
-  - `fecha_fin_hasta`: Filtra eventos que terminan antes de esta fecha (formato ISO)
+  - `tipo_destacado`: Filtra por tipo destacado (`normal`, `oro`, `plata`, `bronce`)
+  - `fecha_inicio_desde`: Filtra por fecha de inicio desde (formato YYYY-MM-DD)
+  - `fecha_inicio_hasta`: Filtra por fecha de inicio hasta (formato YYYY-MM-DD)
+  - `fecha_fin_desde`: Filtra por fecha de fin desde (formato YYYY-MM-DD)
+  - `fecha_fin_hasta`: Filtra por fecha de fin hasta (formato YYYY-MM-DD)
   - `ciudad`: Filtra por ciudad del lugar (búsqueda parcial)
   - `provincia`: Filtra por provincia del lugar (búsqueda parcial)
   - `busqueda`: Búsqueda general en título, subtítulo, descripción, nombre del organizador y nombre del lugar
@@ -263,6 +265,7 @@ El sistema Eventon proporciona las siguientes APIs para gestionar eventos, categ
         "precio": 100.00,
         "estado": "publicado",
         "url": "https://ejemplo.com/evento",
+        "tipo_destacado": "oro",
         "lugar": {
           "id": 1,
           "nombre": "Nombre del lugar",
